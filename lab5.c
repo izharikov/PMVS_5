@@ -119,9 +119,9 @@ static const struct file_operations result_fops = {
 static int __init calc_init(void) {
 	major_number = register_chrdev(0, NUMBER_NAME, &number_fops ); 
 	if (major_number < 0) {
-        calc_exit();
-        return major_number;
-    }
+        	calc_exit();
+        	return major_number;
+    	}
 	major_result = register_chrdev(0, RESULT_NAME, &result_fops );
 	if (major_result < 0){
 		calc_exit();
