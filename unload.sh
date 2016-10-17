@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rmmod lab4 || exit
+rmmod lab5 || exit

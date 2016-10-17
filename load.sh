@@ -1,6 +1,6 @@
 #!/bin/sh
 
-insmod lab4.ko || exit
+insmod lab5.ko || exit
 
 rm -f /dev/calc_number
 rm -f /dev/calc_result
