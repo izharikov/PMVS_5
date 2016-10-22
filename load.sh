@@ -2,11 +2,14 @@
 
 insmod lab5.ko || exit
 
-rm -f /dev/calc_number
-rm -f /dev/calc_result
+rm -f /dev/second
+rm -f /dev/first
+rm -f /dev/operator
 
-mknod /dev/calc_number c $(awk '$2=="calc_number" {print $1}' /proc/devices) 0
-mknod /dev/calc_result c $(awk '$2=="calc_result" {print $1}' /proc/devices) 0
+mknod /dev/first c $(awk '$2=="first" {print $1}' /proc/devices) 0
+mknod /dev/second c $(awk '$2=="second" {print $1}' /proc/devices) 0
+mknod /dev/operator c $(awk '$2=="operator" {print $1}' /proc/devices) 0
 
-chmod 666 /dev/calc_number
-chmod 444 /dev/calc_result
+chmod 666 /dev/operator
+chmod 666 /dev/second
+chmod 666 /dev/first
